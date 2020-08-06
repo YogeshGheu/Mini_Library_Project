@@ -1,5 +1,5 @@
-# Mini_Library_Project
-Note: Run this code with command prrompt for a better experience
+# Mini_Library
+Note: Run this code with command prrompt for a better experience.
 This Project is just like a mini library, which will have some books.
 1. User have to add the Books and library Name in starting.
 2. Then it will ask to create username and paddword for some private options, like adding new books into the library.
