@@ -38,6 +38,7 @@ def set_verification(): # while running first time this function will create two
                        usrnm = input("Set Your Username: ")
                        usrnm = usrnm.capitalize()
                        u.write(usrnm)
+                       u.close()
            open("pass.txt", "x")
            with open("pass.txt", "r") as p:
                if p.read() == "":
@@ -45,31 +46,12 @@ def set_verification(): # while running first time this function will create two
                        pswd = input("Set Your Password: ")
                        pswd = pswd.capitalize()
                        p.write(pswd)
+                       p.close()
                        print("username and password have been set successfully !")
                        sleep(1.5)
                        system('cls')
        except Exception:
            pass
-
-def verify(): # this function is to verify the username and password of the user
-    with open("username.txt", "r") as u:
-        rd = u.read()
-        usr = input("You Need to Verify Your Identity For This Operation. \n\nEnter Your Username: ")
-        usr = usr.capitalize()
-        if rd == usr:
-            print("Username Verified!")
-        else:
-            print("Username can't be found")
-
-    with open("pass.txt", "r") as p:
-        rd = p.read()
-        pas = input("Enter Your Password: ")
-        pas = pas.capitalize()
-        if rd == pas:
-            print("Verification Completed!")
-        else:
-            print("Incorrect Password! Please Try Again")
-
 
 # main class for library
 class Library:
@@ -192,6 +174,7 @@ try:
                                 break
                             elif u_rd == usr_cap:
                                 print("Username Verified!")
+                                u.close()
                                 while True:
                                     with open("pass.txt", "r") as p:
                                         p_rd = p.read()
@@ -201,6 +184,7 @@ try:
                                             break
                                         elif p_rd == pas_cap:
                                             print("Verification Completed!")
+                                            p.close()
                                             yogesh.add_book()
                                             break
                                         else:
